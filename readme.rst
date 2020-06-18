@@ -2,12 +2,16 @@
 First time setup
 ###################
 
-After clone
-please run command 'composer install';
-then run command 'composer dumpautolaod';
-after that configure your database inside application/config/database.php 
-for development run php -S localhost:8080(port) 
-run the mysql server
+please run command <br/>
+
+```
+composer instal
+composer dumpautolaod
+```
+after that configure your database inside application/config/database.php <br/> 
+For development run:<br/>`php -S localhost:8080(port)` <br/> 
+ and run the mysql server
+
 ###################
 What is CodeIgniter
 ###################
