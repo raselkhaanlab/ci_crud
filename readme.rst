@@ -2,15 +2,19 @@
 First time setup
 ###################
 
-please run command <br/>
+please run command 
 
 ```
-composer instal
-composer dumpautolaod
+|composer instal
+|composer dumpautolaod
 ```
-after that configure your database inside application/config/database.php <br/> 
-For development run:<br/>`php -S localhost:8080(port)` <br/> 
- and run the mysql server
+|after that configure your database inside application/config/database.php 
+|For development run:
+```
+php -S localhost:8080(port)
+```
+
+ |and run the mysql server
 
 ###################
 What is CodeIgniter
