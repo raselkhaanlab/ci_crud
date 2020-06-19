@@ -8,10 +8,10 @@
 				<p class="text-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et molestie ac feugiat sed. Diam volutpat commodo.</p>
 				<p class="text-2"><span>Eu ultrices:</span> Vitae auctor eu augue ut. Malesuada nunc vel risus commodo viverra. Praesent elementum facilisis leo vel.</p>
 				<div class="form-left-last">
-          <a href="/login" class="btn btn-primary">Have An Account</a>
+          <a href='<?=base_url() ?>login' class="btn btn-primary">Have An Account</a>
 				</div>
 			</div>
-			<form class="form-detail" action="/registration/store" method="post" id="myform">
+			<form class="form-detail" action='<?=base_url() ?>registration/store' method="post" id="myform">
 				<h2>REGISTER FORM</h2>
 				<div class="form-group">
 					<div class="form-row">

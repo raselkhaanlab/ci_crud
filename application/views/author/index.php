@@ -14,7 +14,7 @@
    <p class="lead">Here is the total <?= $total ?> author </p>
   </div>
   <div class="col-5">
-    <a href="/author/add" class="btn btn-success float-right">add author</a>
+    <a href='<?=base_url() ?>author/add' class="btn btn-success float-right">add author</a>
   </div>
   </div>
   <hr class="my-4">
@@ -43,10 +43,10 @@
             <td>
                 <div class="row">
                   <div class="col-6">
-                  <a class="btn btn-success  float-right" href='/author/edit/<?=$author["id"] ?>'> edit</a> 
+                  <a class="btn btn-success  float-right" href='<?=base_url() ?>author/edit/<?=$author["id"] ?>'> edit</a> 
                   </div>
                   <div class="col-6">
-                <form action='/author/delete/<?=$author["id"] ?>' method="post">
+                <form action='<?=base_url() ?>author/delete/<?=$author["id"] ?>' method="post">
                   <button class="btn btn-danger " type="submit"> delete</button>
                 </form>
                   </div>

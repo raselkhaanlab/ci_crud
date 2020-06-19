@@ -4,7 +4,7 @@
   <h1 class="display-4">Add author</h1>
   <p class="lead">Here is the author adding</p>
   <hr class="my-4">
-  <form method="post" action="/author/post_add">
+  <form method="post" action='<?=base_url() ?>author/post_add'>
   <input type="hidden" name="id" >
   <div class="form-group row">
     <label for="name" class="col-sm-2 col-form-label">name</label>

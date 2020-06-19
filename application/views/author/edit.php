@@ -4,7 +4,7 @@
   <h1 class="display-4">Edit author</h1>
   <p class="lead">Here is the author editing</p>
   <hr class="my-4">
-  <form method="post" action="/author/post_edit">
+  <form method="post" action='<?=base_url() ?>author/post_edit'>
   <input type="hidden" name="id" value=<?= $author['id'] ?>>
   <div class="form-group row">
     <label for="name" class="col-sm-2 col-form-label">name</label>
