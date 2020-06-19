@@ -58,3 +58,6 @@ $route['registration/store']='Auth/registration';
 $route['login']='Auth/login_form';
 $route['logout']='Auth/logout';
 $route['login/post']='Auth/login';
+$route['edit/me']='Auth/edit';
+$route['edit/me/post']='Auth/edit_post';
+

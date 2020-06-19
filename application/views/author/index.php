@@ -11,7 +11,7 @@
   <div class="col-7">
   <h1 class="display-4"> Author's list</h1>
    
-   <p class="lead">Here is the author list</p>
+   <p class="lead">Here is the total <?= $total ?> author </p>
   </div>
   <div class="col-5">
     <a href="/author/add" class="btn btn-success float-right">add author</a>
@@ -56,6 +56,9 @@
       <?php endforeach; ?>
   </tbody>
 </table>
+<?php if (isset($links)) { ?>
+                <?php echo $links ?>
+ <?php } ?>
 </div>
  </div>
 <?php include __DIR__."/../footer.php"?>

@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 use Carbon\Carbon;
-class Welcome extends CI_Controller {
+class Welcome extends MY_Controller {
 
 	// protected $request;
 	// public function __construct(){

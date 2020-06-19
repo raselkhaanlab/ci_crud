@@ -1,8 +1,6 @@
 <?php
-class User_model extends CI_Model{
-    public function __construct(){
-        $this->load->database();
-    }
+class User_model extends MY_Model{
+    protected $table="users";
    public function registration ($data){
        $id=$this->db->insert('users',$data);
        return $id;
@@ -21,9 +19,16 @@ class User_model extends CI_Model{
               ->limit(1)
               ->get("users");
               if($query->num_rows()>0){
-                  return $query->row();
+                  return $query;
               }
               return false;  
+   }
+   public function update_me($data){
+       if(key_exists('id',$data)){
+           unset($data['id']);
+       }
+       $is_update=$this->db->update($this->table,$data);
+       return $is_update;
    }
     
 }

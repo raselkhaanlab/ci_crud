@@ -1,8 +1,6 @@
 <?php
-class Author_model extends CI_Model{
-    public function __construct(){
-        $this->load->database();
-    }
+class Author_model extends MY_Model{
+   protected $table="authors";
    public function all(){
     //    
        $query= $this->db->get("authors");
