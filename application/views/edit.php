@@ -4,7 +4,7 @@
   <h1 class="display-4">Edit Account</h1>
   <p class="lead">Here is the account edit form</p>
   <hr class="my-4">
-  <form method="post"action='<?=base_url() ?>edit/me/post'>
+  <form method="post"action='<?=base_url() ?>edit/me'>
   <div class="form-group row">
     <label for="name" class="col-sm-2 col-form-label">name</label>
     <div class="col-sm-10">

@@ -49,15 +49,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-
+require APPPATH.'route/web.php';
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
-$route['registration']='Auth/registration_form';
-$route['registration/store']='Auth/registration';
-$route['login']='Auth/login_form';
-$route['logout']='Auth/logout';
-$route['login/post']='Auth/login';
-$route['edit/me']='Auth/edit';
-$route['edit/me/post']='Auth/edit_post';
+
 

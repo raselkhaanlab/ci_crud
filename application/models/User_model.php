@@ -28,7 +28,10 @@ class User_model extends MY_Model{
            unset($data['id']);
        }
        $is_update=$this->db->update($this->table,$data);
-       return $is_update;
+       if($this->db->affected_rows()<1){
+        return FALSE;
+    }
+    return TRUE;
    }
     
 }

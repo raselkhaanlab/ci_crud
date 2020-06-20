@@ -14,18 +14,27 @@ class Author_model extends MY_Model{
    public function update($id,$data){
        $this->db->where("id",$id);
        $query= $this->db->update("authors",$data);
-       return $query;
+        if($this->db->affected_rows()<1){
+            return FALSE;
+        }
+        return TRUE;
+ 
    } 
    public function insert($data){
        $query= $this->db->insert("authors",$data);
-       $query?$this->session->set_flashdata("message","add successfull"):$this->session->set_flashdata("message","add failed");
-       redirect("/author");
+       if($this->db->affected_rows()<1){
+        return FALSE;
+    }
+    return TRUE;
    } 
 
    function row_delete($id)
 {
-   $this->db->where('id', $id);
-   return $this->db->delete('authors'); 
+   $sql= $this->db->delete($this->table,['id'=>$id]);
+   if($this->db->affected_rows()<1){
+       return FALSE;
+   }
+   return TRUE;
 }
     
 }

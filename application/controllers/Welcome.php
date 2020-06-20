@@ -26,63 +26,7 @@ class Welcome extends MY_Controller {
 	public function index()
 	{
 		
-		return $this->load->view('welcome_message');
+		return $this->load->view('landing_page');
 	}
-	public function loadform(){
-		$data['title']="form";
-		
-		 $this->load->view('form',$data);
-		
-		 return;
-
-	}
-	public function post(){
-		// echo "<pre>";
-		// var_dump($_FILES["input_file"]);
-		// echo "</pre>";
-		// exit();
-		if (!is_dir('upload/')) {
-			mkdir('./upload/', 0777, TRUE);
-		
-		}
-		$data=["password"=>$this->input->post("password"),"email"=>$this->input->post("email")];
-		$config['upload_path'] = './upload/';
-		$config['allowed_types'] = 'gif|jpg|png';
-		// $config['max_size']     = '100';
-		// $config['max_width'] = '1024';
-		// $config['max_height'] = '768';
-		$this->load->library('upload',$config);
-		// $data['file']=$this->input->input_stream("file");
-		// var_dump($data['file']);
-		// exit(1);
-		// $data['size']=$this->request->getFile('file')->getSize();
-		// $data['name']=$this->request->getFile('file')->getName();
-		// $data['random_name']=$this->request->getFile('file')->getRandomName();
-		// $data['extension']=$this->request->getFile('file')->getExtension();
-		// $data['type']=$this->request->getFile('file')->getType();
-		// $this->load->model("author");
-		// $this->load->library("mcarbon");
-		// $headers=[
-		// 	 "x-auth"=>"ok",
-		// 	 "expires_in"=>$this->mcarbon::now("Asia/Dhaka")->format("H:i:s")
-		// ];
-		// $headers=$this->input->input_stream('file');
-		// echo $headers;
-
-		if ( ! $this->upload->do_upload("input_file"))
-		{
-				$error = array('error' => $this->upload->display_errors());
-
-				return json_response($error,400);
-		}
-		else
-		{
-				$data = array('upload_data' => $this->upload->data());
-
-				return json_response($data);
-		}
-		
-
-		
-	}
+	
 }

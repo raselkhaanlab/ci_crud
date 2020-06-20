@@ -1,6 +1,7 @@
 <?php
 class MY_Controller extends CI_Controller{
     public function __construct(){
+        // header_remove("X-Powered-By");
         parent::__construct();
         $this->load->library('pagination');
     }
@@ -10,7 +11,7 @@ class MY_Controller extends CI_Controller{
         // init params
         $params = array();
         $limit_per_page = $options['limit']?$options['limit']:5;
-        $page = ($this->uri->segment(3)) ? ($this->uri->segment(3) - 1) : 0;
+        $page = $this->uri->segment(3)?$this->uri->segment(3)-1 : 0;
         $total_records = $this->$model->get_total();
      
         if ($total_records > 0)

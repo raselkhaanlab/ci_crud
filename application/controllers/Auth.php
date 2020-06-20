@@ -15,16 +15,13 @@ class Auth extends MY_Controller{
         unset($_SESSION['errors']);
         unset($_SESSION['old']);
         unset($_SESSION['fail']);
-       
         $data['my_info']=$this->session->userdata('user');
         $this->load->view('edit',$data);
     }
     public function edit_post(){
         $id= +$this->session->userdata('user')['id'];
         $this->authcheck->redirect_if_not_authenticate("login");
-        $this->customrequest->is_post_or_redirect('edit/me');
         $input = $this->input->post();
-        
         $validation_config=[
             [
                 'field' => 'name',
@@ -52,18 +49,18 @@ class Auth extends MY_Controller{
                 {
                     $_SESSION['errors']=$this->form_validation->error_array();
                     $_SESSION['old']=$input;
-                    return redirect("/edit/me");
+                    return redirect("edit/me");
                 }
               
             $id=$this->user_model->update_me($input);
             if(!$id){
                 $_SESSION['fail']="Your account edit unsuccessfull";
-                $_SESSION['old']=$input;
-                return redirect('/edit/me');
+                // $_SESSION['old']=$input;
+                return redirect('author');
             }
             $this->session->set_userdata(['success'=>"account edit successfully done!!"]);
             $this->session->set_userdata(["user"=>$this->user_model->get_by_id($this->session->userdata('user')['id'])->row_array()]);
-            return redirect('/author');
+            return redirect('author');
         
     }
     public function registration_form(){
@@ -88,7 +85,6 @@ class Auth extends MY_Controller{
         $this->load->view('login',$data);
     }
     public function login(){
-        $this->customrequest->is_post_or_redirect('login');
         $this->authcheck->redirect_if_authenticate("author");
         $input= $this->input->post();
         $validation_config=[
@@ -129,15 +125,14 @@ class Auth extends MY_Controller{
     public function logout(){
         $this->authcheck->redirect_if_not_authenticate("login");
         $url="author";
-        $this->customrequest->is_post_or_redirect($url);
        $this->session->unset_userdata("user");
        $_SESSION['success']="You Logged out successfully!!";
        return redirect("login");
     }
+  
     public function registration(){
         $url="registration";
         $this->authcheck->redirect_if_authenticate("author");
-        $this->customrequest->is_post_or_redirect($url);
         $input = $this->input->post();
         $validation_config=[
             [

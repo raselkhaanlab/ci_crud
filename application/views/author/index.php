@@ -43,10 +43,10 @@
             <td>
                 <div class="row">
                   <div class="col-6">
-                  <a class="btn btn-success  float-right" href='<?=base_url() ?>author/edit/<?=$author["id"] ?>'> edit</a> 
+                  <a class="btn btn-success  float-right" href='<?=base_url() ?>edit/author/<?=$author["id"] ?>'> edit</a> 
                   </div>
                   <div class="col-6">
-                <form action='<?=base_url() ?>author/delete/<?=$author["id"] ?>' method="post">
+                <form action='<?=base_url() ?>delete/author/<?=$author["id"]?>' method="post">
                   <button class="btn btn-danger " type="submit"> delete</button>
                 </form>
                   </div>

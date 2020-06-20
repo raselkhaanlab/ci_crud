@@ -11,7 +11,7 @@
           <a href='<?=base_url() ?>login' class="btn btn-primary">Have An Account</a>
 				</div>
 			</div>
-			<form class="form-detail" action='<?=base_url() ?>registration/store' method="post" id="myform">
+			<form class="form-detail" action='<?=base_url() ?>registration' method="post" id="myform">
 				<h2>REGISTER FORM</h2>
 				<div class="form-group">
 					<div class="form-row">

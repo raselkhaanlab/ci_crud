@@ -2,7 +2,7 @@
 <div class="login">
     <h1>Login</h1>
     <span class="text-success"><?= isset($success)? $success:"" ?></span>
-    <form method="post" action='<?=base_url() ?>login/post'>
+    <form method="post" action='<?=base_url() ?>login'>
         <input type="text" name="email" placeholder="email" required="required" />
          <span class="text-danger"><?= isset($errors) && isset($errors['email'])? $errors['email']:"" ?></span>
         <input type="password" name="password" placeholder="Password" required="required" />
