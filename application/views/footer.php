@@ -6,7 +6,7 @@
   if(success){
     alertify.success(success);
     
-  }else if(fail){
+  }else if(fail !=null || fail !==false || fail !==undefined !! fail !== ""){
     alertify.error(success);
   }
     var logout= document.getElementById('logout');

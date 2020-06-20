@@ -11,9 +11,10 @@ class Author extends MY_Controller{
             $data['title']="Authors";
             $paginating_options=['limit'=>3,'base_url'=>'author'];
             $paginationResult=$this->custom_pagination("author_model",$paginating_options);
-            $data['success']=$this->session->has_userdata('success')?$this->session->userdata('success'):'';
-            $data['fail']= $this->session->has_userdata('fail')?$this->session->userdata('fail'):'';
-            $this->session->unset_userdata(['success'=>'','fail'=>'']);
+            $data['success']=$this->session->has_userdata('success')?$this->session->userdata('success'):NULL;
+            $data['fail']= $this->session->has_userdata('fail')?$this->session->userdata('fail'):NULL;
+            $this->session->unset_userdata('success');
+            $this->session->unset_userdata('fail');
             if(!$paginationResult){
                 $data['authors']=0;
                 $data['links']="";
