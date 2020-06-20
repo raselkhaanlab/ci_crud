@@ -32,9 +32,9 @@
     </tr>
   </thead>
   <tbody>
-      <?php foreach($authors as $key=>$author):?>
+      <?php if(count($authors)>0): foreach($authors as $key=>$author):?>
             <tr>
-            <th scope="row"><?= $key+1 ?></th>
+            <th scope="row"><?= $author['id'] ?></th>
             <td><?= $author["name"]?></td>
             <td><?= $author["email"]?></td>
             <td><?= $author["github"]?></td>
@@ -53,7 +53,10 @@
                 </div>
             </td>
             </tr>
-      <?php endforeach; ?>
+      <?php endforeach;?>
+      <?php  else: ?>
+         <p>No reccord found!!!!!</p>
+      <?php endif;?>
   </tbody>
 </table>
 <?php if (isset($links)) { ?>

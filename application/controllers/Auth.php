@@ -54,7 +54,7 @@ class Auth extends MY_Controller{
               
             $id=$this->user_model->update_me($input);
             if(!$id){
-                $_SESSION['fail']="Your account edit unsuccessfull";
+                $_SESSION['fail']="No change no update !!";
                 // $_SESSION['old']=$input;
                 return redirect('author');
             }

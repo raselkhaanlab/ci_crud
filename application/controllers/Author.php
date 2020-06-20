@@ -25,6 +25,7 @@ class Author extends MY_Controller{
                 $data['links']=$paginationResult['links'];
                 $data['total']=$this->author_model->get_total();  
             }
+             $data['page']=isset($page)?$page:1;
              $this->load->view("author/index",$data);
     }
     public function add(){
